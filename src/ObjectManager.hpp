@@ -90,7 +90,7 @@ public:
             }
 
             lineNum++;
-        } _player.gameType = (GameType)atoi(line.c_str());
+        } _player.SetGameType((GameType)atoi(line.c_str()));
     }
 
     void saveLevel(std::string lvlName) {
@@ -101,7 +101,7 @@ public:
         lvlFile << '\n';
         for (auto obj : _topLayer) lvlFile << obj->serialize();
         lvlFile << '\n';
-        lvlFile << _player.gameType;
+        lvlFile << _player.GetGameType();
 
         lvlFile.close();
     }
